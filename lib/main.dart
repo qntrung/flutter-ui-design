@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/travel/page/onboard_travel.dart';
+import 'package:travel_app/travel/pages/onboard_travel.dart';
 
 void main() {
   runApp(const MyApp());

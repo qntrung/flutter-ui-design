@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/travel/contants.dart';
-import 'package:travel_app/travel/model/onboard_model.dart';
+import 'package:travel_app/travel/constant.dart';
+import 'package:travel_app/travel/models/onboard_model.dart';
+import 'package:travel_app/travel/pages/travel_home.dart';
 
 class OnboardTravelScreen extends StatefulWidget {
   const OnboardTravelScreen({super.key});
@@ -55,7 +56,14 @@ class _OnboardTravelScreenState extends State<OnboardTravelScreen> {
                       height: 40,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const TravelHomeScreen(),
+                            ),
+                            (route) => false);
+                      },
                       child: Visibility(
                         visible: currentIndex != onboarding.length - 1,
                         child: Container(
@@ -129,6 +137,14 @@ class _OnboardTravelScreenState extends State<OnboardTravelScreen> {
                       child: Column(
                         children: [
                           GestureDetector(
+                            onTap: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const TravelHomeScreen(),
+                                  ),
+                                  (route) => false);
+                            },
                             child: Container(
                               height: 75,
                               margin:
